@@ -11,7 +11,23 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Dummy data to simulate a database
-let entries = [];
+let entries = [
+    {
+      "id": '1',
+      "title": "Title 1",
+      "description": "Description 1"
+    },
+    {
+      "id": '2',
+      "title": "Title 2",
+      "description": "Description 2"
+    },
+    {
+      "id": '3',
+      "title": "Title 3",
+      "description": "Description 3"
+    }
+  ];
 
 // Endpoint for creating an entry
 app.post('/create', (req, res) => {
