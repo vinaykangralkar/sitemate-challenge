@@ -15,7 +15,7 @@ const apiService = {
 
   readItems: async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/posts`);
+      const response = await axios.get(`${BASE_URL}/read`);
       return response.data;
     } catch (error) {
       console.error('Error reading items:', error);
@@ -25,7 +25,7 @@ const apiService = {
 
   updateItem: async (itemId, updatedItem) => {
     try {
-      const response = await axios.put(`${BASE_URL}/posts/${itemId}`, updatedItem);
+      const response = await axios.put(`${BASE_URL}/update/${itemId}`, updatedItem);
       return response.data;
     } catch (error) {
       console.error('Error updating item:', error);
@@ -35,7 +35,7 @@ const apiService = {
 
   deleteItem: async (itemId) => {
     try {
-      const response = await axios.delete(`${BASE_URL}/posts/${itemId}`);
+      const response = await axios.delete(`${BASE_URL}/delete/${itemId}`);
       return response.data;
     } catch (error) {
       console.error('Error deleting item:', error);

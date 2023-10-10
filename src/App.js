@@ -11,6 +11,8 @@ function App() {
     description: '',
   });
 
+  const [entryId, setEntryId] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEntry((prevEntry) => ({
@@ -25,10 +27,15 @@ function App() {
     setEntry({ id: '', title: '', description: '' });
   };
 
+  const handleDelete = () => {
+    apiService.deleteItem(entryId)
+  }
+
 
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Create issue</h1>
       <form onSubmit={handleSubmit}>
       <label>
         ID:
@@ -47,6 +54,20 @@ function App() {
       <br />
       <button type="submit">Add Entry</button>
       </form>
+
+      <h1>Delet Issue</h1>
+      {/* <button>Delete</button>
+      <input type="text" onChange={(e) => setEntryId(e.target.value)} value={entryId}/> */}
+      <label>
+        Enter Entry ID:
+        <input
+          type="text"
+          value={entryId}
+          onChange={(e) => setEntryId(e.target.value)}
+        />
+      </label>
+      <button onClick={handleDelete}>Delete</button>
+
       </header>
     </div>
   );

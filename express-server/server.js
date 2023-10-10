@@ -37,11 +37,12 @@ app.put('/entries/:id', (req, res) => {
 });
 
 // Endpoint for deleting an entry
-app.delete('/entries/:id', (req, res) => {
+app.delete('/delete/:id', (req, res) => {
   const id = parseInt(req.params.id);
 
   entries = entries.filter((entry) => entry.id !== id);
 
+  console.log('Entry deleted:', entries)
   res.json({ message: 'Entry deleted successfully' });
 });
 
