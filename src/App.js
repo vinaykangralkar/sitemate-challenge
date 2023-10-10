@@ -31,6 +31,10 @@ function App() {
     apiService.deleteItem(entryId)
   }
 
+  const handleReadEntries = () => {
+    apiService.readItems()
+  };
+
 
   return (
     <div className="App">
@@ -59,7 +63,7 @@ function App() {
       {/* <button>Delete</button>
       <input type="text" onChange={(e) => setEntryId(e.target.value)} value={entryId}/> */}
       <label>
-        Enter Entry ID:
+        Enter ID:
         <input
           type="text"
           value={entryId}
@@ -67,6 +71,9 @@ function App() {
         />
       </label>
       <button onClick={handleDelete}>Delete</button>
+
+      <h2>Read All Entries</h2>
+      <button onClick={handleReadEntries}>Read Entries</button>
 
       </header>
     </div>

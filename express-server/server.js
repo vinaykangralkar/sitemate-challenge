@@ -22,7 +22,8 @@ app.post('/create', (req, res) => {
 });
 
 // Endpoint for reading all entries
-app.get('/entries', (req, res) => {
+app.get('/read', (req, res) => {
+  console.log('All entries: ',entries)
   res.json(entries);
 });
 
@@ -46,7 +47,6 @@ app.delete('/delete/:id', (req, res) => {
   res.json({ message: 'Entry deleted successfully' });
 });
 
-// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
